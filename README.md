@@ -24,9 +24,5 @@ This repository contains a Python application for comparing and searching addres
 
 ## Contributors:
 
-- [Your Name](https://github.com/your_username)
-
-## License:
-
-This project is licensed under the [MIT License](LICENSE).
+- [Vishesh Patel](https://github.com/vishesh147)
 
