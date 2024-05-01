@@ -3,7 +3,7 @@ import geopy.distance
 from shapely.geometry import Polygon
 
 class GeoAddress:
-    api_key = 'AqhKeXzvAgR_eos6SLlcVxcMrgk1jf__JZjKdSZPQnGmLUpmP6JPm8kILuxebwM2'
+    api_key = 'API_KEY'
     country_region = 'IN'
     max_results = 1
     output_type = 'json'
