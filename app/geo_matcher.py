@@ -7,7 +7,7 @@ class GeoAddress:
     country_region = 'IN'
     max_results = 1
     output_type = 'json'
-    distance_factor = 2
+    distance_factor = 1.5
     non_overlap_factor = 0.05
 
     def __init__(self, address_line):
@@ -177,9 +177,10 @@ class GeoAddress:
         distance_km = self.get_distance_km(other_geo_addr)
         overlap_percentage = self.get_overlap_percentage(other_geo_addr)
         
-        if overlap_percentage:
-            return round(100 - (100 - overlap_percentage)*self.non_overlap_factor, 2)
+        score = None
+        if overlap_percentage is not None:
+            score = round(100 - (100 - overlap_percentage)*self.non_overlap_factor, 2)
         if distance_km:
-            return round(max(0, 90 - distance_km*self.distance_factor), 2)
-        else:
-            return None
+            score = round(max(0, score - distance_km*self.distance_factor), 2)
+        
+        return score
