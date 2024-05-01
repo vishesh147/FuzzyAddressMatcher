@@ -78,6 +78,8 @@ def generate_erroneous_address(address):
 addresses = open('data/addresses.txt', 'r')
 erroneous_addresses = open('data/erroneous_addresses.txt','w')
 
+line_no = 1
 for line in addresses:
-    erroneous_addresses.write(f'{generate_erroneous_address(line.strip())}\n')
+    erroneous_addresses.write(f'{generate_erroneous_address(line.strip())}, {line_no}\n')
+    line_no += 1
         

@@ -142,7 +142,7 @@ class TextAddress:
     def compare_sound(self, other_address):
         self.process_sound()
         other_address.process_sound()
-        return fuzz.token_sort_ratio(self.soundex_code, other_address.soundex_code)
+        return fuzz.partial_token_sort_ratio(self.soundex_code, other_address.soundex_code)
 
 
     def compare_text(self, other_address):
@@ -152,7 +152,7 @@ class TextAddress:
         if not other_address.is_processed:
             other_address.preprocess_address()
     
-        return (fuzz.token_sort_ratio(self.exclude_common_terms(), other_address.exclude_common_terms())*0.4
+        return (fuzz.partial_token_sort_ratio(self.exclude_common_terms(), other_address.exclude_common_terms())*0.4
                 + fuzz.WRatio(self.address, other_address.address))*0.6
     
 
