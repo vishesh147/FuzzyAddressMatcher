@@ -3,6 +3,6 @@ Fuzzy==1.2.2
 fuzzywuzzy==0.18.0
 geopy==2.4.1
 pgeocode==0.4.1
-Requests==2.31.0
+requests>=2.32.0
 Shapely==2.0.4
 SQLAlchemy==2.0.28
